@@ -1,0 +1,60 @@
+@import "../stylings/colors";
+
+.sidenav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 60px;
+  bottom: 0;
+  width: 280px;
+  padding: 20px;
+  background-color: $color-black;
+  background-image: linear-gradient(-120deg, #2c3e50 0%, $color-black 100%);
+  color: $color-white;
+  overflow: hidden;
+  .menu {
+    width: 100%;
+    &__item {
+      a {
+        position: relative;
+        font-size: 0.85em;
+        display: flex;
+        align-items: center;
+        color: $color-white;
+        padding: 15px 10px;
+        margin: 5px 0;
+        border-radius: 8px;
+        &:hover {
+          background-color: rgb(255 255 255 / 10%);
+        }
+        i {
+          font-size: 1.5em;
+          margin-right: 10px;
+        }
+      }
+      a.active {
+        background-color: $color-white;
+        color: $color-text-blue;
+        font-weight: 600;
+        .badge {
+          background-color: $color-text-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  padding: 5px;
+  right: 10px;
+  background-color: $color-white;
+  border-radius: 50%;
+  color: $color-text-primary;
+  font-size: 0.85em;
+  font-weight: 600;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}

@@ -1,0 +1,94 @@
+@import "../../stylings/colors";
+
+.main-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 20px;
+  button {
+    i {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.todos {
+  .todo {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-top: 1px solid $color-border-primary;
+    &:nth-child(odd) {
+      background-color: $color-highlight-primary;
+    }
+    .radio {
+      margin: 0 10px;
+    }
+    .id {
+      display: none;
+    }
+    .content {
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .delete {
+      display: inherit;
+      padding: 6px;
+      margin: 0 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      &:hover {
+        background-color: #dddddd;
+        i {
+          color: $color-text-primary;
+        }
+      }
+      i {
+        color: $color-text-light;
+      }
+    }
+  }
+
+  .todo-input {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    appearance: none;
+    border: none;
+    background-color: $color-highlight-primary;
+    font-size: 1em;
+    outline: none;
+  }
+}
+
+/* Strikethrough */
+.todo.done {
+  .content {
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: -0.7em;
+      background: $color-black;
+      transform-origin: center left;
+      animation: strikethrough 1s 0s cubic-bezier(0.55, 0, 0.1, 1) 1;
+      transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+  }
+}
+
+/* Keyframes for initial animation */
+@keyframes strikethrough {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

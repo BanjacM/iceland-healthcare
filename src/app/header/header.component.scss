@@ -1,0 +1,130 @@
+@import "../stylings/colors";
+
+.header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: $color-white;
+  box-shadow: inset 0px -1px 0px #eeeeee;
+  z-index: 1;
+  .logo {
+    display: flex;
+    width: 300px;
+    font-size: 1.3em;
+    align-items: center;
+    img {
+      margin: 0 10px;
+      max-height: 50px;
+    }
+  }
+  .searchbox {
+    padding: 5px 20px;
+    border: 1px solid $color-border-primary;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    &:hover {
+      box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+      border-color: rgba(223, 225, 229, 0);
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+    input {
+      height: 30px;
+      width: 250px;
+      font-size: 1em;
+      background-color: transparent;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      color: #bbbbbb;
+    }
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    width: 380px;
+    &__item a {
+      font-size: 0.9em;
+      font-weight: 300;
+      color: $color-text-light;
+      i {
+        font-size: 1.5em;
+        vertical-align: bottom;
+        margin-right: 5px;
+      }
+    }
+    &__item:hover a {
+      color: $color-text-primary;
+    }
+  }
+  .main-menu {
+    display: flex;
+    width: 200px;
+    height: 59px;
+    margin: 0 10px 2px 80px;
+    padding: 0 5px 0 10px;
+    align-items: center;
+    &:hover {
+      background-color: darken($color: $color-white, $amount: 5);
+    }
+    img {
+      margin: 0 15px 0 0;
+      border-radius: 50%;
+    }
+    &__user {
+      flex: none;
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    i.up {
+      display: none;
+    }
+    &--open {
+      background-color: darken($color: $color-white, $amount: 5);
+      i.down {
+        display: none;
+      }
+      i.up {
+        display: block;
+      }
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    width: 300px;
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  padding: 20px 0;
+  background-color: $color-white;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  border: 1px solid $color-border-primary;
+  border-radius: 8px;
+  &__item {
+    a {
+      display: block;
+      padding: 10px 20px;
+      &:hover {
+        color: $color-black;
+        background-color: darken($color: $color-white, $amount: 5);
+      }
+    }
+  }
+  &--open {
+    display: block;
+  }
+}

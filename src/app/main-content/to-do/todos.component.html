@@ -1,0 +1,26 @@
+<div class="main-buttons">
+  <button class="button button--blue"><i class="material-icons">search</i>LEITA</button>
+  <button class="button">Raða eftir</button>
+</div>
+
+<!-- To-Do List -->
+<div class="todos">
+
+	<form (submit)="addTodo()">
+		<input
+			type="text"
+			name="inputTodo"
+			placeholder="Enter todo..."
+			class="todo-input"
+			[(ngModel)]="inputTodo"
+		/>
+	</form>
+
+	<div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
+    <input type="radio" class="radio">
+		<div class="id">{{ i }}</div>
+		<div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+    <div class="spacer"></div>
+		<span class="delete" (click)="deleteTodo(i)"><i class="material-icons">delete_outline</i></span>
+	</div>
+</div>

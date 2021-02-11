@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "app/stylings/colors";
+
+$header-height: 60px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: $color-text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: $color-text-primary;
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 0 5px;
+  color: $color-text-light;
+  background-color: transparent;
+  border: 1px solid $color-border-primary;
+  border-radius: 6px;
+  font-size: 1em;
+  &:hover, &:focus {
+    cursor: pointer;
+    color: #333333;
+    border-color: darken($color: $color-border-primary, $amount: 10);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  &--blue {
+    color: lighten($color: $color-text-blue, $amount: 20);
+    border-color: #93c7f1;
+    &:hover, &:focus {
+      color: $color-text-blue;
+      border-color: $color-text-blue;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.85em;
+}
