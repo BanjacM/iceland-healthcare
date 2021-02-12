@@ -25,6 +25,10 @@ h3 {
       height: 50px;
       align-items: center;
       border-top: 1px solid $color-border-primary;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($color: $color-highlight-primary, $amount: 3);
+      }
     }
     &:nth-child(odd) {
       background-color: $color-highlight-primary;
