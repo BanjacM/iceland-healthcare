@@ -14,7 +14,7 @@
     <li class="menu__item"><a href="#"><i class="material-icons down">wysiwyg</i>Vinnulisti</a></li>
     <li class="menu__item"><a href="#"><i class="material-icons down">event</i>Dagskra</a></li>
   </ul>
-  <a href="#" class="main-menu" (click)="status=!status" [ngClass]="status ? 'main-menu--open' : ''">
+  <a href="#" class="main-menu" id="main-menu" (click)="status=!status" [ngClass]="status ? 'main-menu--open' : ''">
     <img src="../../assets/images/milan.jpg" alt="">
     <p class="main-menu__user">Milan Banjac</p>
     <div class="spacer"></div>
@@ -24,11 +24,14 @@
 
   <div class="dropdown-menu" [ngClass]="{'dropdown-menu--open': status, '': !status}">
     <ul class="dropdown-menu__list">
-      <li class="dropdown-menu__item"><a href="#">Item 1</a></li>
-      <li class="dropdown-menu__item"><a href="#">Item 2</a></li>
-      <li class="dropdown-menu__item"><a href="#">Item 3</a></li>
-      <li class="dropdown-menu__item"><a href="#">Item 4</a></li>
-      <li class="dropdown-menu__item"><a href="#">Item 5</a></li>
+      <li class="dropdown-menu__item"><a href="#"><i class="material-icons down">announcement</i>Give Feedback</a></li>
+        <div class="divider"></div>
+        <li class="dropdown-menu__item"><a href="#"><i class="material-icons down">settings</i>Settings & Privacy</a></li>
+        <li class="dropdown-menu__item"><a href="#"><i class="material-icons down">help</i>Help & Support</a></li>
+        <li class="dropdown-menu__item"><a href="#"><i class="material-icons down">bedtime</i>Display & Accessibility</a></li>
+        <li class="dropdown-menu__item"><a href="#"><i class="material-icons down">logout</i>Log Out</a></li>
+        <div class="divider"></div>
+        <li class="privacy"><a href="#">Privacy Policy • Terms of Service</a></li>
     </ul>
   </div>
 </div>
