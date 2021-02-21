@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "iceland-healthcare": {
+    "todo-list": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/iceland-healthcare",
+            "outputPath": "dist/todo-list",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "iceland-healthcare:build"
+            "browserTarget": "todo-list:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "iceland-healthcare:build:production"
+              "browserTarget": "todo-list:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "iceland-healthcare:build"
+            "browserTarget": "todo-list:build"
           }
         },
         "test": {
@@ -119,15 +119,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "iceland-healthcare:serve"
+            "devServerTarget": "todo-list:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "iceland-healthcare:serve:production"
+              "devServerTarget": "todo-list:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "iceland-healthcare"
+  "defaultProject": "todo-list"
 }
