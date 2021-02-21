@@ -32,6 +32,7 @@
       <input type="radio" class="radio" [checked]="todo.completed" fxFlexOffset="10px">
       <div class="id">{{ i }}</div>
       <div class="content">{{ todo.content }}</div>
+      <div class="spacer"></div>
       <span class="delete" (click)="deleteTodo(i, true)"><i class="material-icons">delete_outline</i></span>
     </a>
   </div>
