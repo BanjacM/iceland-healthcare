@@ -1,6 +1,6 @@
-<div class="main-buttons">
-  <button class="button button--blue"><i class="material-icons">manage_search</i>Leita</button>
-  <button class="button">Raða eftir</button>
+<div class="main-buttons" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end">
+  <button class="button button--blue" fxLayoutGap="5px"><i class="material-icons">manage_search</i><span>Leita</span></button>
+  <button class="button"><span>Raða eftir</span></button>
 </div>
 
 <!-- To-Do List -->
@@ -11,11 +11,10 @@
   </form>
 
   <div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
-    <a (click)="toggleDone(i)">
-      <input type="radio" class="radio" [checked]="todo.completed">
+    <a (click)="toggleDone(i)" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+      <input type="radio" class="radio" [checked]="todo.completed" fxFlexOffset="10px">
       <div class="id">{{ i }}</div>
-      <div class="content">{{ todo.content }}</div>
-      <div class="spacer"></div>
+      <div class="content" fxFlex>{{ todo.content }}</div>
       <span class="delete" (click)="deleteTodo(i)"><i class="material-icons">delete_outline</i></span>
     </a>
   </div>

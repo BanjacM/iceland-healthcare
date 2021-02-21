@@ -1,9 +1,7 @@
 @import "../stylings/colors";
 
 .header {
-  display: flex;
   position: fixed;
-  align-items: center;
   top: 0;
   height: 60px;
   width: 100%;
@@ -11,12 +9,9 @@
   box-shadow: inset 0px -1px 0px #eeeeee;
   z-index: 1;
   .logo {
-    display: flex;
-    width: 300px;
     font-size: 1.3em;
-    align-items: center;
+    width: 280px;
     img {
-      margin: 0 10px;
       max-height: 50px;
     }
   }
@@ -24,9 +19,6 @@
     padding: 5px 20px;
     border: 1px solid $color-border-primary;
     border-radius: 35px;
-    display: flex;
-    align-items: center;
-    margin-left: 15px;
     &:hover {
       box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
       border-color: rgba(223, 225, 229, 0);
@@ -48,9 +40,6 @@
     }
   }
   .menu {
-    display: flex;
-    justify-content: space-between;
-    width: 380px;
     &__item a {
       font-size: 0.9em;
       font-weight: 300;
@@ -66,12 +55,9 @@
     }
   }
   .main-menu {
-    display: flex;
-    width: 200px;
     height: 59px;
-    margin: 0 10px 2px 80px;
+    margin: 0 20px 2px 0;
     padding: 0 5px 0 10px;
-    align-items: center;
     > * {
       pointer-events: none;
     }
@@ -79,15 +65,16 @@
       background-color: darken($color: $color-white, $amount: 5);
     }
     img {
-      margin: 0 15px 0 0;
       border-radius: 50%;
     }
     &__user {
-      flex: none;
       width: 100px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    i {
+      margin-top: 1px;
     }
     i.up {
       display: none;
@@ -121,6 +108,7 @@
     a {
       display: flex;
       padding: 15px 20px;
+      cursor: pointer;
       &:hover {
         color: $color-black;
         background-color: darken($color: $color-white, $amount: 5);
