@@ -28,11 +28,10 @@
 
 <div class="doneTodos" [ngClass]="{'doneTodos--closed': status, '': !status}">
   <div *ngFor="let todo of completedTodos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
-    <a (click)="toggleCompletedDone(i)">
-      <input type="radio" class="radio" [checked]="todo.completed">
+    <a (click)="toggleCompletedDone(i)" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+      <input type="radio" class="radio" [checked]="todo.completed" fxFlexOffset="10px">
       <div class="id">{{ i }}</div>
       <div class="content">{{ todo.content }}</div>
-      <div class="spacer"></div>
       <span class="delete" (click)="deleteTodo(i, true)"><i class="material-icons">delete_outline</i></span>
     </a>
   </div>
